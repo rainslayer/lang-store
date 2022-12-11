@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   app:
+    image: rainslayer/lang-store
     container_name: lang-store
-    build:
-      context: .
-      dockerfile: Dockerfile
     ports:
       - 3000:3000
