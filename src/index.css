@@ -1,13 +1,102 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.ant-layout-header {
+  background: #a1783c !important;
+}
+
+.ant-layout-header .ant-row {
+  height: 100%;
+}
+
+.nav_button {
+  color: black;
+}
+
+.nav_button:active,
+.nav_button:visited,
+.nav_button:link {
+  color: black !important;
+}
+
+.nav_button:hover {
+  opacity: 0.5 !important;
+  transition: opacity 0.3s;
+}
+
+.home_button {
+  font-size: 24px;
+}
+
+.header_cart svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.header_cart a {
+  font-size: 18px;
+}
+
+th,
+td {
+  text-align: center !important;
+}
+
+.add_to_cart__form {
+  justify-content: space-evenly;
+}
+
+.add_to_cart__input input {
+  text-align: center !important;
+}
+
+form {
+  display: flex;
+}
+
+form div {
+  margin-bottom: 0 !important;
+  align-self: center;
+}
+
+.table_title {
+  padding: 0px 20px;
+}
+
+.ant-empty {
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 750px) {
+  .add_to_cart__form {
+    flex-direction: column;
+  }
+
+  .add_to_cart__button {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .add_to_cart__button .ant-form-item-control-input {
+    width: 100% !important;
+  }
+
+  .add_to_cart__button .ant-form-item-control-input button {
+    width: 100% !important;
+  }
 }

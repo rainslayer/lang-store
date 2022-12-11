@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "antd";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Header } from "./components/Header";
+import { ERoutes, IAppProps } from "./const/types";
+import { setDealers } from "./features/dealers/dealersSlice";
+import { Cart } from "./pages/Cart";
+import { Catalogue } from "./pages/Catalogue";
+import { StoreState } from "./store";
 
-function App() {
+function AppComponent(props: IAppProps) {
+  const dispatch = useDispatch();
+  const { dealers } = props;
+  const { route } = useSelector((state: StoreState) => state.router);
+
+  useEffect(() => {
+    dispatch(setDealers({ dealers }));
+  }, [dealers]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header />
+      {route === ERoutes.Catalogue ? <Catalogue /> : <Cart />}
+    </Layout>
   );
 }
 
-export default App;
+export default AppComponent;
